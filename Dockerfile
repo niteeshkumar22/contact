@@ -17,4 +17,5 @@ EXPOSE 80
 WORKDIR /var/www/html
 
 # Start the Apache web server
-CMD ["apache2-foreground"]
+#CMD ["apache2-foreground"]
+CMD ["apachectl", "-D", "FOREGROUND"]
