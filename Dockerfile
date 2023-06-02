@@ -16,9 +16,6 @@ EXPOSE 8050
 # Set the working directory to /var/www/html
 WORKDIR /var/www/html
 
-# Update the entrypoint to start the Apache service automatically
-ENTRYPOINT ["apache2ctl"]
-
 # Set the default command to run the Apache service in the foreground
-CMD ["-D", "FOREGROUND"]
+CMD ["apachectl", "-D", "FOREGROUND"]
 
