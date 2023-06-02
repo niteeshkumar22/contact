@@ -11,7 +11,7 @@ RUN a2enmod rewrite
 RUN docker-php-ext-install pdo_mysql mysqli
 
 # Expose port 80 for the Apache web server
-EXPOSE 80
+EXPOSE 8050
 
 # Set the working directory to /var/www/html
 WORKDIR /var/www/html
