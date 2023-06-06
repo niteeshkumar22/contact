@@ -14,15 +14,14 @@ steps:
       - 'gcr.io/$PROJECT_ID/image2'
   
   # Additional steps... .
-  # Step 3: Deploy the Docker image to Cloud Run
-  - name: 'gcr.io/cloud-builders/gcloud'
+  #Step 4: Deploy the Docker image to GKE
+  - name: 'gcr.io/cloud-builders/kubectl'
     args:
-      - 'run'
-      - 'deploy'
-      - 'my-cloud-run-service-1'
-      - '--image=gcr.io/$PROJECT_ID/image2'
-      - '--region=us-central1'
-      - '--platform=managed'
+      - 'set'
+      - 'image'
+      - 'deployment/Deployment-1'
+      - 'container-1=gcr.io/$PROJECT_ID/image2:latest'
+      - '--namespace=namespace-1'
 
   # Add any additional steps you need for your build process, such as deploying the image to a Kubernetes cluster or running tests.
   
