@@ -19,7 +19,7 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - 'my-cloud-run-service'
+      - 'my-cloud-run-service-1'
       - '--image=gcr.io/$PROJECT_ID/image2'
       - '--region=us-central1'
       - '--platform=managed'
