@@ -19,7 +19,7 @@ steps:
     args:
       - 'set'
       - 'image'
-      - 'deployment/Deployment-1'
+      - 'deployment/deployment-1'
       - 'container-1=gcr.io/$PROJECT_ID/image2:latest'
       - '--namespace=namespace-1'
 
@@ -28,3 +28,8 @@ steps:
 images:
   # Specify the Docker image to be pushed to Google Container Registry
   - 'gcr.io/$PROJECT_ID/image2'
+  
+  env:
+  - 'CLOUDSDK_COMPUTE_REGION=us-central-1'
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
