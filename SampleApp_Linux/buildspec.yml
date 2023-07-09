@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 7.4
+  pre_build:
+    commands:
+      - echo Installing Apache HTTP Server
+      - sudo apt-get update
+      - sudo apt-get install apache2 -y
+  build:
+    commands:
+      - echo Build started on `date`
+      - cp index.html /var/www/html/
+  post_build:
+    commands:
+      - echo Configuring Apache HTTP Server
+      - sudo systemctl enable apache2
+      - sudo systemctl start apache2
+      # Add any additional configuration steps here
+
+artifacts:
+  files:
+    - '**/*'
